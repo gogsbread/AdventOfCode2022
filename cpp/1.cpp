@@ -16,7 +16,7 @@ long p1(const auto &input) {
 }
 
 long p2(const auto &input) {
-  std::vector<long> m;
+  std::vector<long> m{};
   long c{0};
   for (const auto &l : input) {
     if (l.empty()) {
