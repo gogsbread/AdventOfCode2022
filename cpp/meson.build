@@ -6,9 +6,9 @@ executable('1',
     '1.cpp',
     dependencies: [])
 
-# executable('2',
-#     '2.cpp',
-#     dependencies: [])
+executable('2',
+    '2.cpp',
+    dependencies: [])
 
 # executable('3',
 #     '3.cpp',
