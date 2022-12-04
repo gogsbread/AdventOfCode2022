@@ -1,6 +1,6 @@
 project('advent2022', 'cpp',
   version : '0.1',
-  default_options : ['warning_level=3', 'cpp_std=c++2a'])
+  default_options : ['warning_level=3', 'cpp_std=c++20'])
 
 executable('1',
     '1.cpp',
@@ -10,9 +10,9 @@ executable('2',
     '2.cpp',
     dependencies: [])
 
-# executable('3',
-#     '3.cpp',
-#     dependencies: [])
+executable('3',
+    '3.cpp',
+    dependencies: [])
 
 # executable('4',
 #     '4.cpp',
