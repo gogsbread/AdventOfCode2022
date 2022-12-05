@@ -3,20 +3,16 @@
 namespace {
 auto parse(const std::string &s) {
   auto it = std::find(s.begin(), s.end(), ',');
-  std::string_view sec1{s.begin(), it};
-  std::string_view sec2{std::next(it, 1), s.end()};
-  std::tuple<long, long, long, long> out{};
-  {
-    size_t hy = sec1.find('-');
-    std::from_chars(sec1.data(), sec1.data() + hy, std::get<0>(out));
-    std::from_chars(sec1.data() + hy + 1, sec1.data() + sec1.size(),
-                    std::get<1>(out));
-  }
-  {
-    size_t hy = sec2.find('-');
-    std::from_chars(sec2.data(), sec2.data() + hy, std::get<2>(out));
-    std::from_chars(sec2.data() + hy + 1, sec2.data() + sec2.size(),
-                    std::get<3>(out));
+  std::array<std::string_view, 2> sec;
+  sec[0] = std::string_view{s.begin(), it};
+  sec[1] = std::string_view{std::next(it, 1), s.end()};
+
+  std::array<long, 4> out{};
+  for (size_t i = 0; const auto &sv : sec) {
+    size_t hy = sv.find('-');
+    std::from_chars(sv.data(), sv.data() + hy, out[i]);
+    std::from_chars(sv.data() + hy + 1, sv.data() + sv.size(), out[i + 1]);
+    i += 2;
   }
   return out;
 }
