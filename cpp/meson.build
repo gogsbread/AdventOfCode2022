@@ -14,9 +14,9 @@ executable('3',
     '3.cpp',
     dependencies: [])
 
-# executable('4',
-#     '4.cpp',
-#     dependencies: [])
+executable('4',
+    '4.cpp',
+    dependencies: [])
 
 # executable('5',
 #     '5.cpp',
