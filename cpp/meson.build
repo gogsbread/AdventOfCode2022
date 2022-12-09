@@ -22,9 +22,9 @@ executable('5',
     '5.cpp',
     dependencies: [])
 
-# executable('6',
-#     '6.cpp',
-#     dependencies: [])
+executable('6',
+    '6.cpp',
+    dependencies: [])
 
 # executable('7',
 #     '7.cpp',
