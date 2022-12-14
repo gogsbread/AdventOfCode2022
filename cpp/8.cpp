@@ -1,4 +1,5 @@
 #include "common.h"
+
 namespace {
 long p1(const auto &input) {
   std::set<std::tuple<size_t, size_t>> trees{};
