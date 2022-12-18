@@ -3,7 +3,7 @@
 namespace {
 using Pos = std::complex<long>;
 
-template <size_t N> long p1(const auto &input) {
+template <size_t N> long p(const auto &input) {
   auto Hasher = [](const Pos &k) -> std::size_t {
     return std::hash<long>()(k.real()) ^ std::hash<long>()(k.imag());
   };
@@ -35,6 +35,6 @@ template <size_t N> long p1(const auto &input) {
 
 int main() {
   const auto &input = gb::advent2021::readIn();
-  gb::advent2021::writeOut(std::to_string(p1<2>(input)));
-  gb::advent2021::writeOut(std::to_string(p1<10>(input)));
+  gb::advent2021::writeOut(std::to_string(p<2>(input)));
+  gb::advent2021::writeOut(std::to_string(p<10>(input)));
 }
