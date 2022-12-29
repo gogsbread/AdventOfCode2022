@@ -1,6 +1,6 @@
 project('advent2022', 'cpp',
   version : '0.1',
-  default_options : ['warning_level=3', 'cpp_std=c++20'])
+  default_options : ['warning_level=3', 'cpp_std=c++2b'])
 
 executable('1',
     '1.cpp',
@@ -42,9 +42,11 @@ executable('10',
     '10.cpp',
     dependencies: [])
 
-# executable('11',
-#     '11.cpp',
-#     dependencies: [])
+# gmp = dependency('gmp')
+executable('11',
+    '11.cpp',
+    # dependencies: [gmp])
+    dependencies: [])
 
 # executable('12',
 #     '12.cpp',
