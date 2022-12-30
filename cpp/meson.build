@@ -48,9 +48,9 @@ executable('11',
     # dependencies: [gmp])
     dependencies: [])
 
-# executable('12',
-#     '12.cpp',
-#     dependencies: [])
+executable('12',
+    '12.cpp',
+    dependencies: [])
 
 # executable('13',
 #     '13.cpp',

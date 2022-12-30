@@ -28,6 +28,9 @@
 #include <vector>
 
 using vs = std::vector<std::string>;
+#define ASSERT_EXPR(expr, err)                                                 \
+  if (!(expr))                                                                 \
+    throw std::runtime_error((err));
 
 namespace gb::advent2021 {
 

@@ -4,9 +4,7 @@ struct Dir {
   std::string name;
   long size;
 };
-#define ASSERT_EXPR(expr, err)                                                 \
-  if ((expr))                                                                  \
-    throw std::runtime_error((err));
+
 #define ASSERT_SCAN(expr, err)                                                 \
   if ((expr) == 0)                                                             \
     throw std::runtime_error((err));
@@ -17,7 +15,7 @@ Dir solve(size_t &i, const auto &input, auto &dirs) {
   char s[MaxSize];
   ASSERT_SCAN(sscanf(input[i++].c_str(), "$ cd %s", s), "No cd");
   d.name = s;
-  ASSERT_EXPR(input[i++] != "$ ls", "No ls");
+  ASSERT_EXPR(input[i++] == "$ ls", "No ls");
   while (i < input.size() && input[i][0] != '$') {
     long sz{};
     if (input[i].find("dir") == std::string::npos)
