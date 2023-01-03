@@ -3,22 +3,16 @@
 open Common
 open System
 
+// take a predicate and a list
+// if list is empty just return
+// if list is not empty then take while the predicate is true; and concatenate with the drop while the predicate is true
+
 let p1 (input: List<string>) =
     input
-    |> Seq.map (fun s ->
-        if ((String.IsNullOrWhiteSpace >> not) s) then
-            Some(int64 s)
-        else
-            None)
-    |> Seq.fold
-        (fun acc cal ->
-            let (c, s) = acc
-
-            match cal with
-            | Some v -> (c + v, max (c + v) s)
-            | None -> (0L, s))
-        (0, 0)
-    |> snd
+    |> splitBy (fun s -> String.IsNullOrWhiteSpace s)
+    |> List.map (fun l -> List.map int64 l)
+    |> List.map (fun l -> List.sum l)
+    |> List.max
 
 let input = Common.readIn
 input |> p1 |> Common.writeOut
